@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>实验室考勤系统</title>
+
+    <script src="js/adapter.js"></script>
+    <!--rem适配js-->
+
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/menu.css">
+
+    <script src="/Users/cl/Desktop/tools/js/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+
+    <div id="menu">
+        <!--隐藏菜单-->
+        <div id="ensconce">
+            <h2>
+                <img src="images/show.png" alt="">
+                实验室考勤系统
+            </h2>
+        </div>
+
+        <!--显示菜单-->
+        <div id="open">
+            <div class="navH">
+                实验室考勤系统
+                <span><img class="obscure" src="images/obscure.png" alt=""></span>
+            </div>
+            <div class="navBox">
+                <ul>
+                    <li>
+                        <h2 class="obtain">个人考勤<i></i></h2>
+                        <div class="secondary">
+                            <h3>人脸考勤</h3>
+                            <h3>考勤记录</h3>
+                            <h3>请假记录</h3>
+                            <h3>考勤反馈</h3>
+                            <h3>更换相片</h3>
+                        </div>
+                    </li>
+                    <li>
+                        <h2 class="obtain">信息管理<i></i></h2>
+                        <div class="secondary">
+                            <h3 class="stats_m" style="color: red;">管理员请先登陆</h3>
+                            <h3>管理员管理</h3>
+                            <h3>学生管理</h3>
+                            <h3>考勤申诉管理</h3>
+                            <h3>统计管理</h3>
+                            <h3>退出登陆</h3>
+                        </div>
+                    </li>
+                    <li>
+                        <h2 class="obtain">监控录像<i></i></h2>
+                        <div class="secondary">
+                            <h3 class="stats_m" style="color: red;">管理员请先登陆</h3>
+                            <h3>实时监控</h3>
+                            <h3>录像</h3>
+                            <h3>录像管理</h3>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="js/menu.js"></script>
+    <!--控制js-->
+
+    <div class="another">
+        <iframe id="myif" class="ahtml" src="login.html" frameborder="0"></iframe>
+    </div>
+    <script>
+        $("h3").click(function () {
+            var str = $(this).text();
+            console.log(str);
+            if('人脸考勤'==str){
+                $("#myif").attr('src', '../carmer.html');
+            }else if ('考勤记录' == str) {
+                $("#myif").attr('src', 'record.html');
+            } else if ('请假记录' == str) {
+                $("#myif").attr('src', 'leave_record.html');
+            } else if ('考勤反馈' == str) {
+                $("#myif").attr('src', 'feedback.html');
+            } else if ('更换相片' == str) {
+                $("#myif").attr('src', 'changepic.html');
+            } 
+            
+            
+            else if ('管理员请先登陆' == str) {
+                $("#myif").attr('src', 'login.html');
+            } else if ('管理员管理' == str) {
+                $("#myif").attr('src', 'manage_m.html');
+            } else if ('学生管理' == str) {
+                $("#myif").attr('src', 'manage_s.html');
+            } else if ('考勤申诉管理' == str) {
+                $("#myif").attr('src', 'attendance.html');
+            } else if ('统计管理' == str) {
+                $("#myif").attr('src', 'statistics.html');
+            } else if ('退出登陆' == str) {
+                // $("#myif").attr('src', 'manage_s.html');
+                $('.stats_m').text('管理员请先登陆');
+            } 
+            
+            
+            else if ('实时监控' == str) {
+                $("#myif").attr('src', 'monitoring.html');
+            } else if ('录像' == str) {
+                $("#myif").attr('src', 'video.html');
+            } else if ('录像管理' == str) {
+                $("#myif").attr('src', 'manage_s.html');
+            } 
+        });
+    </script>
+</body>
+
+</html>
